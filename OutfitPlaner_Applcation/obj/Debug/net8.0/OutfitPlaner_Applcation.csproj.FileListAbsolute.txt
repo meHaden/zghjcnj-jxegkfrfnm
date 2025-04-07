@@ -419,6 +419,7 @@ C:\Users\vlase\Desktop\Дипломная работа\OutfitPlaner_Applcation\O
 C:\Users\vlase\Desktop\Дипломная работа\OutfitPlaner_Applcation\OutfitPlaner_Applcation\obj\Debug\net8.0\OutfitPlaner_Applcation.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\vlase\Desktop\Дипломная работа\OutfitPlaner_Applcation\OutfitPlaner_Applcation\obj\Debug\net8.0\OutfitPlaner_Applcation.RazorAssemblyInfo.cache
 C:\Users\vlase\Desktop\Дипломная работа\OutfitPlaner_Applcation\OutfitPlaner_Applcation\obj\Debug\net8.0\OutfitPlaner_Applcation.RazorAssemblyInfo.cs
+C:\Users\vlase\Desktop\Дипломная работа\OutfitPlaner_Applcation\OutfitPlaner_Applcation\obj\Debug\net8.0\OutfitPlaner_Applcation.sourcelink.json
 C:\Users\vlase\Desktop\Дипломная работа\OutfitPlaner_Applcation\OutfitPlaner_Applcation\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\vlase\Desktop\Дипломная работа\OutfitPlaner_Applcation\OutfitPlaner_Applcation\obj\Debug\net8.0\scopedcss\bundle\OutfitPlaner_Applcation.styles.css
 C:\Users\vlase\Desktop\Дипломная работа\OutfitPlaner_Applcation\OutfitPlaner_Applcation\obj\Debug\net8.0\scopedcss\projectbundle\OutfitPlaner_Applcation.bundle.scp.css

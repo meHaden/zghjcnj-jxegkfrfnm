@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <!-- Полный JavaScript код для управления модальным окном -->
+        <!-- Управление модальным окном -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const deleteModal = document.getElementById("deleteModal");
@@ -76,7 +76,7 @@
                 // Функции управления модальным окном
                 function openDeleteModal() {
                     deleteModal.style.display = "block";
-                    document.body.style.overflow = "hidden"; // Блокируем прокрутку страницы
+                    document.body.style.overflow = "hidden"; // Блокируем прокрутку 
                 }
 
                 function closeDeleteModal() {
@@ -84,7 +84,6 @@
                     document.body.style.overflow = "auto"; // Восстанавливаем прокрутку
                 }
 
-                // Обработчики событий
                 deleteButton.addEventListener("click", openDeleteModal);
                 cancelDeleteBtn.addEventListener("click", closeDeleteModal);
 

@@ -1,21 +1,14 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using OutfitPlaner_Applcation.Data;
-using OutfitPlaner_Applcation.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Конфигурация базы данных
 var dbPath = Path.Combine(builder.Environment.ContentRootPath, "Data", "OutfitPlanner.db");
-if (!Directory.Exists(Path.GetDirectoryName(dbPath)))
-{
-    Directory.CreateDirectory(Path.GetDirectoryName(dbPath)!);
-}
-
 builder.Services.AddDbContext<WardrobeDbContext>(options =>
     options.UseSqlite($"Data Source={dbPath}"));
 
-// Настройка аутентификации через куки
+// Настройка аутентификации через Cookie 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -30,13 +23,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.Cookie.SameSite = SameSiteMode.Lax;
     });
 
-// Другие сервисы
 builder.Services.AddControllersWithViews();
-builder.Services.AddSession(options =>
+builder.Services.AddSession();
+
+builder.Services.Configure<Microsoft.AspNetCore.Http.Features.FormOptions>(options =>
 {
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.MultipartBodyLengthLimit = long.MaxValue;
 });
 
 var app = builder.Build();
@@ -48,19 +40,18 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
-// Конфигурация middleware pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
-app.UseAuthentication(); // Должно быть перед UseAuthorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseSession();
@@ -68,7 +59,5 @@ app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-
 
 app.Run();

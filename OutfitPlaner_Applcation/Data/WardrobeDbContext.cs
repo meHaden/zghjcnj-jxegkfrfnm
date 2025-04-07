@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using OutfitPlaner_Applcation.Models;
 
 namespace OutfitPlaner_Applcation.Data
 {
-    public class WardrobeDbContext : DbContext
+    public class WardrobeDbContext : IdentityDbContext<IdentityUser>
     {
         public WardrobeDbContext(DbContextOptions<WardrobeDbContext> options)
             : base(options)
@@ -14,11 +16,20 @@ namespace OutfitPlaner_Applcation.Data
         public DbSet<Clothing> Clothing { get; set; }
         public DbSet<ClothingCapsule> ClothingCapsules { get; set; }
         public DbSet<ClothingLook> ClothingLooks { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Конфигурация для User
-            modelBuilder.Entity<User>(entity =>
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Clothing>()
+                .HasOne(c => c.User)
+                .WithMany(u => u.Clothing)  
+                .HasForeignKey(c => c.IdUser)
+                .IsRequired();
+        
+
+
+        // Конфигурация для User
+        modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("User");
 
@@ -96,23 +107,23 @@ namespace OutfitPlaner_Applcation.Data
                     .HasColumnName("Added_At")
                     .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
-                // Настройка связи с User
-                entity.HasOne(c => c.IdUserNavigation)
+               
+                entity.HasOne(c => c.User)
                     .WithMany(u => u.Clothing)
                     .HasForeignKey(c => c.IdUser)
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
-            // Конфигурация для ClothingCapsule (если нужно)
+            // Конфигурация для ClothingCapsule 
             modelBuilder.Entity<ClothingCapsule>(entity =>
             {
-                // Добавьте конфигурацию здесь
+                
             });
 
-            // Конфигурация для ClothingLook (если нужно)
+            // Конфигурация для ClothingLook 
             modelBuilder.Entity<ClothingLook>(entity =>
             {
-                // Добавьте конфигурацию здесь
+                
             });
         }
 

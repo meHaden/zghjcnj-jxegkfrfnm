@@ -10,295 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --background-color: #f8f9fa;
-            --text-color: #333;
-            --light-gray: #e9ecef;
-            --border-radius: 8px;
-            --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+    <link rel="stylesheet" href="~/css/mywardrobe.css" />
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding-left: 220px;
-            transition: padding-left 0.3s;
-        }
-
-        .side-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 220px;
-            height: 100%;
-            background: white;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            transition: width 0.3s;
-            overflow: hidden;
-        }
-
-        .menu-header {
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .menu-icon {
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--primary-color);
-            margin-right: 15px;
-            transition: transform 0.3s;
-        }
-
-        .menu-title {
-            font-weight: 600;
-            color: var(--secondary-color);
-            white-space: nowrap;
-        }
-
-        .menu-items {
-            list-style: none;
-            padding: 15px 0;
-        }
-
-            .menu-items li {
-                margin-bottom: 5px;
-            }
-
-            .menu-items a {
-                display: flex;
-                align-items: center;
-                padding: 12px 15px;
-                color: var(--text-color);
-                text-decoration: none;
-                transition: all 0.3s;
-                white-space: nowrap;
-            }
-
-                .menu-items a:hover {
-                    background: var(--light-gray);
-                    color: var(--primary-color);
-                }
-
-            .menu-items i {
-                font-size: 18px;
-                width: 24px;
-                margin-right: 15px;
-                text-align: center;
-                transition: margin 0.3s;
-            }
-
-        .nav-buttons {
-            display: flex;
-            gap: 10px;
-            padding: 15px;
-            background: white;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .nav-btn {
-            padding: 8px 15px;
-            background: var(--light-gray);
-            border-radius: var(--border-radius);
-            color: var(--text-color);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 14px;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-        }
-
-            .nav-btn:hover {
-                background: #ddd;
-            }
-
-            .nav-btn.active {
-                background: var(--primary-color);
-                color: white;
-            }
-
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-            .header h1 {
-                color: var(--secondary-color);
-                margin-bottom: 10px;
-            }
-
-        .add-item-form {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .form-section {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-            .form-section:last-child {
-                border-bottom: none;
-            }
-
-        .form-section-title {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #555;
-        }
-
-        input[type="text"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-            input:focus,
-            select:focus,
-            textarea:focus {
-                outline: none;
-                border-color: var(--primary-color);
-            }
-
-        .image-upload {
-            border: 2px dashed #ccc;
-            padding: 30px;
-            text-align: center;
-            border-radius: var(--border-radius);
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-            .image-upload:hover {
-                border-color: var(--primary-color);
-                background-color: #f8fafc;
-            }
-
-            .image-upload i {
-                font-size: 40px;
-                color: #aaa;
-                margin-bottom: 10px;
-            }
-
-        .preview-image {
-            max-width: 200px;
-            max-height: 200px;
-            margin-top: 15px;
-            display: none;
-            border-radius: var(--border-radius);
-            border: 1px solid #eee;
-        }
-
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .tag-option {
-            padding: 8px 15px;
-            background: #f0f0f0;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            user-select: none;
-        }
-
-            .tag-option:hover {
-                background: #e0e0e0;
-            }
-
-            .tag-option.selected {
-                background: var(--primary-color);
-                color: white;
-            }
-
-        .color-tag {
-            min-width: 70px;
-            text-align: center;
-        }
-
-        .submit-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 14px;
-            font-size: 16px;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            width: 100%;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            margin-top: 20px;
-        }
-
-            .submit-btn:hover {
-                background-color: var(--secondary-color);
-            }
-
-            .submit-btn:disabled {
-                background-color: #ccc;
-                cursor: not-allowed;
-            }
-
-        .error-message {
-            color: #dc3545;
-            font-size: 0.9rem;
-            margin-top: 5px;
-            display: none;
-        }
-
-        .form-error {
-            color: #dc3545;
-            font-size: 1rem;
-            margin: 15px 0;
-            text-align: center;
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <div class="side-menu" id="sideMenu">
@@ -308,11 +21,9 @@
         </div>
 
         <div class="nav-buttons">
-            <a href="/Home/Index" class="nav-btn"><i class="fas fa-home"></i> Главная</a>
-            <a asp-controller="Clothing" asp-action="Index" class="btn btn-primary">
-                Перейти к одежде
+            <a href="/ProfileWardrobe/Clothing" class="nav-btn">
+                <i class="fas fa-tshirt"></i> Перейти к одежде
             </a>
-
         </div>
 
         <ul class="menu-items">
@@ -332,14 +43,13 @@
 
         <form id="addItemForm" class="add-item-form" enctype="multipart/form-data">
             @Html.AntiForgeryToken()
-            <input type="hidden" id="userId" name="userId" value="@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value">
 
             <div id="formError" class="form-error"></div>
 
             <div class="form-section">
                 <div class="form-group">
-                    <label for="itemType">Тип одежды</label>
-                    <select id="itemType" name="itemType" required>
+                    <label for="ItemType">Тип одежды</label>
+                    <select id="ItemType" name="ItemType" required>
                         <option value="">Выберите тип</option>
                         <option value="Футболка">Футболка</option>
                         <option value="Рубашка">Рубашка</option>
@@ -352,7 +62,7 @@
                         <option value="Обувь">Обувь</option>
                         <option value="Аксессуары">Аксессуары</option>
                     </select>
-                    <div class="error-message" id="itemTypeError">Пожалуйста, выберите тип</div>
+                    <div class="error-message" id="ItemTypeError">Пожалуйста, выберите тип</div>
                 </div>
 
                 <div class="form-group">
@@ -361,10 +71,10 @@
                         <i class="fas fa-cloud-upload-alt"></i>
                         <p>Перетащите сюда изображение или кликните для выбора</p>
                         <p>Максимальный размер: 5MB (JPG, PNG)</p>
-                        <input type="file" id="itemImage" name="imageFile" accept="image/jpeg,image/png" style="display: none;" required>
+                        <input type="file" id="ImageFile" name="ImageFile" accept="image/jpeg,image/png" style="display: none;" required>
                         <img id="imagePreview" class="preview-image" alt="Предпросмотр">
                     </div>
-                    <div class="error-message" id="itemImageError">Пожалуйста, загрузите изображение (JPG или PNG, до 5MB)</div>
+                    <div class="error-message" id="ImageFileError">Пожалуйста, загрузите изображение (JPG или PNG, до 5MB)</div>
                 </div>
             </div>
 
@@ -380,8 +90,8 @@
                         <div class="tag-option" data-value="Осень">Осень</div>
                         <div class="tag-option" data-value="Всесезонное">Всесезонное</div>
                     </div>
-                    <input type="hidden" id="season" name="season" required>
-                    <div class="error-message" id="seasonError">Пожалуйста, выберите сезон</div>
+                    <input type="hidden" id="Season" name="Season" required>
+                    <div class="error-message" id="SeasonError">Пожалуйста, выберите сезон</div>
                 </div>
 
                 <div class="form-group">
@@ -400,8 +110,8 @@
                         <div class="tag-option color-tag" data-value="Коричневый" style="background: #a52a2a; color: white;">Коричневый</div>
                         <div class="tag-option color-tag" data-value="Мультиколор">Мультиколор</div>
                     </div>
-                    <input type="hidden" id="color" name="color" required>
-                    <div class="error-message" id="colorError">Пожалуйста, выберите цвет</div>
+                    <input type="hidden" id="Color" name="Color" required>
+                    <div class="error-message" id="ColorError">Пожалуйста, выберите цвет</div>
                 </div>
 
                 <div class="form-group">
@@ -416,14 +126,14 @@
                         <div class="tag-option" data-value="Бохо">Бохо</div>
                         <div class="tag-option" data-value="Романтический">Романтический</div>
                     </div>
-                    <input type="hidden" id="style" name="style" required>
-                    <div class="error-message" id="styleError">Пожалуйста, выберите стиль</div>
+                    <input type="hidden" id="Style" name="Style" required>
+                    <div class="error-message" id="StyleError">Пожалуйста, выберите стиль</div>
                 </div>
 
                 <div class="form-group">
-                    <label for="material">Материал</label>
-                    <input type="text" id="material" name="material" placeholder="Например: Хлопок 100%" required>
-                    <div class="error-message" id="materialError">Пожалуйста, укажите материал</div>
+                    <label for="Material">Материал</label>
+                    <input type="text" id="Material" name="Material" placeholder="Например: Хлопок 100%" required>
+                    <div class="error-message" id="MaterialError">Пожалуйста, укажите материал</div>
                 </div>
 
                 <div class="form-group">
@@ -435,8 +145,8 @@
                         <div class="tag-option" data-value="4">4 - Удовлетворительное</div>
                         <div class="tag-option" data-value="5">5 - Плохое</div>
                     </div>
-                    <input type="hidden" id="condition" name="condition" required>
-                    <div class="error-message" id="conditionError">Пожалуйста, укажите состояние</div>
+                    <input type="hidden" id="Condition" name="Condition" required>
+                    <div class="error-message" id="ConditionError">Пожалуйста, укажите состояние</div>
                 </div>
             </div>
 
@@ -446,6 +156,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
             // Управление боковым меню
             const menuToggle = document.getElementById('menuToggle');
             const sideMenu = document.getElementById('sideMenu');
@@ -454,17 +165,12 @@
                 sideMenu.classList.toggle('expanded');
             });
 
-            // Валидация формы и обработка изображений
             const form = document.getElementById('addItemForm');
             const submitBtn = document.getElementById('submitBtn');
             const imageUpload = document.getElementById('imageUpload');
-            const itemImage = document.getElementById('itemImage');
+            const itemImage = document.getElementById('ImageFile');
             const imagePreview = document.getElementById('imagePreview');
             const formError = document.getElementById('formError');
-
-            function sanitizeInput(input) {
-                return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            }
 
             function showError(errorId, message = null) {
                 const errorElement = document.getElementById(errorId);
@@ -476,77 +182,62 @@
                 document.getElementById(errorId).style.display = 'none';
             }
 
-            function validateField(fieldId, errorId, errorMessage) {
-                const field = document.getElementById(fieldId);
-                if (!field.value.trim()) {
-                    showError(errorId, errorMessage);
-                    return false;
-                }
-                hideError(errorId);
-                return true;
-            }
-
             // Обработка загрузки изображения
-            imageUpload.addEventListener('click', () => {
-                itemImage.click();
-            });
+            imageUpload.addEventListener('click', () => itemImage.click());
 
-            itemImage.addEventListener('change', (e) => {
+            itemImage.addEventListener('change', function(e) {
                 const file = e.target.files[0];
                 if (!file) return;
 
                 if (!file.type.match('image/jpeg') && !file.type.match('image/png')) {
-                    showError('itemImageError', 'Поддерживаются только изображения JPG и PNG');
+                    showError('ImageFileError', 'Поддерживаются только изображения JPG и PNG');
                     return;
                 }
 
                 if (file.size > 5 * 1024 * 1024) {
-                    showError('itemImageError', 'Изображение должно быть меньше 5 МБ');
+                    showError('ImageFileError', 'Изображение должно быть меньше 5 МБ');
                     return;
                 }
 
                 const reader = new FileReader();
-                reader.onload = (event) => {
+                reader.onload = function(event) {
                     imagePreview.src = event.target.result;
                     imagePreview.style.display = 'block';
-                    hideError('itemImageError');
+                    hideError('ImageFileError');
                 };
                 reader.readAsDataURL(file);
             });
 
             // Обработка перетаскивания изображения
-            imageUpload.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                imageUpload.style.borderColor = '#4a6fa5';
-                imageUpload.style.backgroundColor = '#f0f7ff';
+            ['dragover', 'dragleave', 'drop'].forEach(eventName => {
+                imageUpload.addEventListener(eventName, function(e) {
+                    e.preventDefault();
+                    if (eventName === 'dragover') {
+                        this.style.borderColor = '#4a6fa5';
+                        this.style.backgroundColor = '#f0f7ff';
+                    } else if (eventName === 'dragleave') {
+                        this.style.borderColor = '#ccc';
+                        this.style.backgroundColor = '';
+                    } else if (eventName === 'drop') {
+                        this.style.borderColor = '#ccc';
+                        this.style.backgroundColor = '';
+                        const file = e.dataTransfer.files[0];
+                        if (file && (file.type.match('image/jpeg') || file.type.match('image/png'))) {
+                            itemImage.files = e.dataTransfer.files;
+                            const reader = new FileReader();
+                            reader.onload = function(event) {
+                                imagePreview.src = event.target.result;
+                                imagePreview.style.display = 'block';
+                                hideError('ImageFileError');
+                            };
+                            reader.readAsDataURL(file);
+                        } else {
+                            showError('ImageFileError', 'Поддерживаются только изображения JPG и PNG');
+                        }
+                    }
+                });
             });
 
-            imageUpload.addEventListener('dragleave', () => {
-                imageUpload.style.borderColor = '#ccc';
-                imageUpload.style.backgroundColor = '';
-            });
-
-            imageUpload.addEventListener('drop', (e) => {
-                e.preventDefault();
-                imageUpload.style.borderColor = '#ccc';
-                imageUpload.style.backgroundColor = '';
-
-                const file = e.dataTransfer.files[0];
-                if (file && (file.type.match('image/jpeg') || file.type.match('image/png'))) {
-                    itemImage.files = e.dataTransfer.files;
-                    const reader = new FileReader();
-                    reader.onload = (event) => {
-                        imagePreview.src = event.target.result;
-                        imagePreview.style.display = 'block';
-                        hideError('itemImageError');
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    showError('itemImageError', 'Поддерживаются только изображения JPG и PNG');
-                }
-            });
-
-            // Обработка выбора тегов
             function setupTagSelection(containerId, hiddenInputId, errorId = null) {
                 const tags = document.querySelectorAll(`#${containerId} .tag-option`);
                 const hiddenInput = document.getElementById(hiddenInputId);
@@ -556,70 +247,51 @@
                         tags.forEach(t => t.classList.remove('selected'));
                         tag.classList.add('selected');
                         hiddenInput.value = tag.getAttribute('data-value');
-
-                        if (errorId) {
-                            hideError(errorId);
-                        }
+                        if (errorId) hideError(errorId);
                     });
                 });
             }
 
-            // Инициализация выбора тегов
-            setupTagSelection('seasonTags', 'season', 'seasonError');
-            setupTagSelection('colorTags', 'color', 'colorError');
-            setupTagSelection('styleTags', 'style', 'styleError');
-            setupTagSelection('conditionTags', 'condition', 'conditionError');
+            setupTagSelection('seasonTags', 'Season', 'SeasonError');
+            setupTagSelection('colorTags', 'Color', 'ColorError');
+            setupTagSelection('styleTags', 'Style', 'StyleError');
+            setupTagSelection('conditionTags', 'Condition', 'ConditionError');
 
             // Валидация формы
             function validateForm() {
                 let isValid = true;
 
-                // Проверка обязательных полей
-                isValid &= validateField('itemType', 'itemTypeError', 'Пожалуйста, выберите тип');
-                isValid &= validateField('material', 'materialError', 'Пожалуйста, укажите материал');
+                if (!document.getElementById('ItemType').value) {
+                    showError('ItemTypeError', 'Пожалуйста, выберите тип');
+                    isValid = false;
+                }
 
-                // Проверка изображения
+                if (!document.getElementById('Material').value.trim()) {
+                    showError('MaterialError', 'Пожалуйста, укажите материал');
+                    isValid = false;
+                }
+
                 if (!itemImage.files.length) {
-                    showError('itemImageError', 'Пожалуйста, загрузите изображение');
+                    showError('ImageFileError', 'Пожалуйста, загрузите изображение');
                     isValid = false;
                 }
 
-                // Проверка выбранных тегов
-                if (!document.getElementById('season').value) {
-                    showError('seasonError', 'Пожалуйста, выберите сезон');
-                    isValid = false;
-                }
-
-                if (!document.getElementById('color').value) {
-                    showError('colorError', 'Пожалуйста, выберите цвет');
-                    isValid = false;
-                }
-
-                if (!document.getElementById('style').value) {
-                    showError('styleError', 'Пожалуйста, выберите стиль');
-                    isValid = false;
-                }
-
-                if (!document.getElementById('condition').value) {
-                    showError('conditionError', 'Пожалуйста, укажите состояние');
-                    isValid = false;
-                }
+                ['Season', 'Color', 'Style', 'Condition'].forEach(field => {
+                    if (!document.getElementById(field).value) {
+                        showError(`${field}Error`, `Пожалуйста, выберите ${field.toLowerCase()}`);
+                        isValid = false;
+                    }
+                });
 
                 return isValid;
             }
 
-            // Обработка отправки формы
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                hideError('formError');
+                formError.style.display = 'none';
 
-                if (!validateForm()) {
-                    return;
-                }
-
-                if (!confirm('Вы уверены, что хотите добавить эту вещь в гардероб?')) {
-                    return;
-                }
+                if (!validateForm()) return;
+                if (!confirm('Вы уверены, что хотите добавить эту вещь в гардероб?')) return;
 
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Добавляем...';
@@ -627,9 +299,13 @@
                 try {
                     const formData = new FormData(form);
 
-                    // Санитизация текстовых полей
-                    formData.set('itemType', sanitizeInput(formData.get('itemType')));
-                    formData.set('material', sanitizeInput(formData.get('material')));
+                    formData.append('ItemType', document.getElementById('ItemType').value);
+                    formData.append('ImageFile', document.getElementById('ImageFile').files[0]);
+                    formData.append('Season', document.getElementById('Season').value);
+                    formData.append('Color', document.getElementById('Color').value);
+                    formData.append('Style', document.getElementById('Style').value);
+                    formData.append('Material', document.getElementById('Material').value);
+                    formData.append('Condition', document.getElementById('Condition').value);
 
                     const response = await fetch('/ProfileWardrobe/AddClothingItem', {
                         method: 'POST',
@@ -637,35 +313,36 @@
                             'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
                         },
                         body: formData
-                    }).catch(error => {
-                        throw new Error('Ошибка сети: ' + error.message);
                     });
 
-                    const result = await response.json();
-
                     if (!response.ok) {
-                        throw new Error(result.message || 'Ошибка сервера');
+                        const error = await response.text();
+                        throw new Error(error);
                     }
 
+                    const result = await response.json();
                     if (result.success) {
-                        if (confirm('Вещь успешно добавлена! Хотите перейти в гардероб?')) {
-                            window.location.href = '/ProfileWardrobe/Clothing';
-                        }
+                        alert('Вещь успешно добавлена!');
+                        form.reset();
+                        imagePreview.style.display = 'none';
+                        document.querySelectorAll('.tag-option.selected').forEach(el => el.classList.remove('selected'));
+                        document.querySelectorAll('input[type="hidden"]').forEach(el => el.value = '');
                     } else {
                         throw new Error(result.message || 'Ошибка при сохранении');
                     }
                 } catch (error) {
                     console.error('Ошибка:', error);
-                    showError('formError', error.message);
+                    formError.textContent = error.message;
+                    formError.style.display = 'block';
                 } finally {
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Добавить в гардероб';
                 }
             });
 
-            // Скрытие ошибок при вводе
-            document.getElementById('itemType').addEventListener('change', () => hideError('itemTypeError'));
-            document.getElementById('material').addEventListener('input', () => hideError('materialError'));
+            // Скрытие ошибок 
+            document.getElementById('ItemType').addEventListener('change', () => hideError('ItemTypeError'));
+            document.getElementById('Material').addEventListener('input', () => hideError('MaterialError'));
         });
     </script>
 </body>

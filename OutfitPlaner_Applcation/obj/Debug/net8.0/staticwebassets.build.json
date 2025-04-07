@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FH/jIahanHmviLrAQo0ciJ1pM/U+oXXwaqQ0bZhTF/0=",
+  "Hash": "xyYvRJpVfs9nqfdTkPY98MsgftPuGxPd72eJ3Jc7S40=",
   "Source": "OutfitPlaner_Applcation",
   "BasePath": "_content/OutfitPlaner_Applcation",
   "Mode": "Default",
@@ -1340,6 +1340,27 @@
       "OriginalItemSpec": "wwwroot\\css\\main.css"
     },
     {
+      "Identity": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\mywardrobe.css",
+      "SourceId": "OutfitPlaner_Applcation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\",
+      "BasePath": "_content/OutfitPlaner_Applcation",
+      "RelativePath": "css/mywardrobe#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "my1y6chdei",
+      "Integrity": "kvuu1dZ4ZWPgeM+7+WMU1+5cJCs4ES4/TqcQdRKWi8M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\mywardrobe.css"
+    },
+    {
       "Identity": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\register.css",
       "SourceId": "OutfitPlaner_Applcation",
       "SourceType": "Discovered",
@@ -2661,6 +2682,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\b4bd0266-93e4-4131-aa60-276811a2c225.jpg",
+      "SourceId": "OutfitPlaner_Applcation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\",
+      "BasePath": "_content/OutfitPlaner_Applcation",
+      "RelativePath": "uploads/clothing/b4bd0266-93e4-4131-aa60-276811a2c225#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8n7e3ysk2y",
+      "Integrity": "zHZS6ibl/GzAjZ3JT75Ieyjp17Uf4+vsR6qcwqioVOY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\clothing\\b4bd0266-93e4-4131-aa60-276811a2c225.jpg"
     }
   ],
   "Endpoints": [
@@ -2743,6 +2785,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-p5WUbOtCrVATUuANgfWtY8PqXDZHAI+FCxZxlEvSfO4="
+        }
+      ]
+    },
+    {
+      "Route": "css/mywardrobe.css",
+      "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\mywardrobe.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5575"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kvuu1dZ4ZWPgeM+7+WMU1+5cJCs4ES4/TqcQdRKWi8M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:56:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kvuu1dZ4ZWPgeM+7+WMU1+5cJCs4ES4/TqcQdRKWi8M="
+        }
+      ]
+    },
+    {
+      "Route": "css/mywardrobe.my1y6chdei.css",
+      "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\mywardrobe.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5575"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kvuu1dZ4ZWPgeM+7+WMU1+5cJCs4ES4/TqcQdRKWi8M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:56:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "my1y6chdei"
+        },
+        {
+          "Name": "label",
+          "Value": "css/mywardrobe.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kvuu1dZ4ZWPgeM+7+WMU1+5cJCs4ES4/TqcQdRKWi8M="
         }
       ]
     },
@@ -10155,7 +10279,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 05:34:57 GMT"
+          "Value": "Mon, 07 Apr 2025 18:45:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10200,7 +10324,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 05:34:57 GMT"
+          "Value": "Mon, 07 Apr 2025 18:45:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10245,7 +10369,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 05:34:57 GMT"
+          "Value": "Mon, 07 Apr 2025 18:45:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10282,7 +10406,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 05:34:57 GMT"
+          "Value": "Mon, 07 Apr 2025 18:45:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10293,6 +10417,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-x16P8u6y0AKMlbVj+NjjU1IVA4LXj3ZE3YdlTqre9Cg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/clothing/b4bd0266-93e4-4131-aa60-276811a2c225.8n7e3ysk2y.jpg",
+      "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\b4bd0266-93e4-4131-aa60-276811a2c225.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1600032"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zHZS6ibl/GzAjZ3JT75Ieyjp17Uf4+vsR6qcwqioVOY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:45:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8n7e3ysk2y"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/clothing/b4bd0266-93e4-4131-aa60-276811a2c225.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-zHZS6ibl/GzAjZ3JT75Ieyjp17Uf4+vsR6qcwqioVOY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/clothing/b4bd0266-93e4-4131-aa60-276811a2c225.jpg",
+      "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\b4bd0266-93e4-4131-aa60-276811a2c225.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1600032"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zHZS6ibl/GzAjZ3JT75Ieyjp17Uf4+vsR6qcwqioVOY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:45:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zHZS6ibl/GzAjZ3JT75Ieyjp17Uf4+vsR6qcwqioVOY="
         }
       ]
     }

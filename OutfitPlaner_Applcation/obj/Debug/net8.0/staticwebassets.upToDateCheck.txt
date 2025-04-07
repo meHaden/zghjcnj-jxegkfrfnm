@@ -1,4 +1,5 @@
 wwwroot\css\main.css
+wwwroot\css\mywardrobe.css
 wwwroot\css\register.css
 wwwroot\css\site.css
 wwwroot\css\user.css
@@ -62,3 +63,4 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\uploads\clothing\b4bd0266-93e4-4131-aa60-276811a2c225.jpg

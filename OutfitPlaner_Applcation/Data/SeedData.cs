@@ -11,7 +11,7 @@ public static class SeedData
         UserManager<IdentityUser> userManager,
         RoleManager<IdentityRole> roleManager)
     {
-        // Проверяем, есть ли уже роли в базе (используем Identity таблицы)
+        // Проверяем, есть ли уже роли в базе 
         if (await roleManager.Roles.AnyAsync())
         {
             return; // База уже инициализирована
@@ -47,7 +47,7 @@ public static class SeedData
                 {
                     await userManager.AddToRoleAsync(adminUser, "Admin");
 
-                    // Создание соответствующей записи в вашей бизнес-таблице User
+                    // Создание соответствующей записи в User
                     var dbUser = new User
                     {
                         UserName = adminUser.UserName,
@@ -56,7 +56,6 @@ public static class SeedData
                         CreatedAt = DateTime.UtcNow
                     };
 
-                    // Проверяем, существует ли таблица User
                     if (context.Database.CanConnect() &&
                         context.Database.GetPendingMigrations().Any())
                     {

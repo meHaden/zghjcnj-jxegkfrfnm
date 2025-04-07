@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<OutfitPlaner_Applcation.Models.Clothing>
+@{
     Layout = null;
     ViewData["Title"] = "Моя одежда";
 }
@@ -8,25 +9,48 @@
 <head>
     <title>@ViewData["Title"]</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
+      
+        .clothing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
         }
 
-        .message {
-            font-size: 24px;
-            color: #666;
-            margin-top: 50px;
+        .clothing-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .clothing-img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
     <h1>Моя одежда</h1>
 
-    <div class="message">
-        СКОРО ЗДЕСЬ ПОЯВИТСЯ ВАША ОДЕЖДА
-    </div>
+    @if (Model?.Any() == true)
+    {
+        <div class="clothing-grid">
+            @foreach (var item in Model)
+            {
+                <div class="clothing-item">
+                    <img src="@item.ImageUrl" alt="@item.Type" class="clothing-img">
+                    <p>Тип: @item.Type</p>
+                    <p>Цвет: @item.Color</p>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="message">
+            В гардеробе пока нет вещей. <a href="/ProfileWardrobe/Clothing/AddClothingItem">Добавить вещь</a>
+        </div>
+    }
 
     <a href="/ProfileWardrobe/MyWardrobe" style="display: inline-block; margin-top: 30px;">← Назад</a>
 </body>

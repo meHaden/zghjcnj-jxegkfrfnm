@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
+      "Id": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\mywardrobe.css",
+      "PackagePath": "staticwebassets\\css\\mywardrobe.css"
+    },
+    {
       "Id": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\register.css",
       "PackagePath": "staticwebassets\\css\\register.css"
     },
@@ -259,6 +263,10 @@
     {
       "Id": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\b4bd0266-93e4-4131-aa60-276811a2c225.jpg",
+      "PackagePath": "staticwebassets\\uploads\\clothing\\b4bd0266-93e4-4131-aa60-276811a2c225.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.OutfitPlaner_Applcation.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

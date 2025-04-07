@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OutfitPlaner_Applcation.Data;
 using OutfitPlaner_Applcation.Models;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
+using System.Text.Json;
 
 namespace OutfitPlaner_Applcation.Controllers
 {
@@ -13,168 +14,134 @@ namespace OutfitPlaner_Applcation.Controllers
     {
         private readonly IWebHostEnvironment _environment;
         private readonly WardrobeDbContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ILogger<WardrobeController> _logger;
 
         public WardrobeController(
             IWebHostEnvironment environment,
             WardrobeDbContext context,
-            UserManager<IdentityUser> userManager)
+            ILogger<WardrobeController> logger)
         {
             _environment = environment;
             _context = context;
-            _userManager = userManager;
+            _logger = logger;
         }
 
-        [HttpGet]
-        public IActionResult AddClothingItem()
-        {
-            return View();
-        }
-
-        // Новый метод для просмотра вещей по категориям
-        [HttpGet]
+        [HttpGet("Category/{category}")]
         public async Task<IActionResult> Category(string category)
         {
-            var identityUser = await _userManager.GetUserAsync(User);
-            if (identityUser == null) return Unauthorized();
-
-            var dbUser = await _context.Users
-                .FirstOrDefaultAsync(u => u.Email == identityUser.Email);
-            if (dbUser == null) return Unauthorized("Пользователь не найден");
-
-            var items = await _context.Clothing
-                .Where(c => c.IdUser == dbUser.Id && c.Type == category)
-                .OrderByDescending(c => c.AddedAt)
-                .ToListAsync();
-
-            ViewBag.CategoryName = category;
-            return View(items);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddClothingItem(
-            [Required] string itemType,
-            [Required] IFormFile imageFile,
-            [Required] string color,
-            [Required] string style,
-            [Required] string material,
-            [Required] string season,
-            [Range(1, 5)] int condition)
-        {
-            if (!ModelState.IsValid)
-            {
-                // Возвращаем ошибки 
-                var errors = ModelState.Values
-                    .SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-
-                return BadRequest(new
-                {
-                    success = false,
-                    message = "Ошибки валидации",
-                    errors = errors
-                });
-            }
-
             try
             {
-                
-                if (imageFile.Length > 5 * 1024 * 1024)
+                var userResult = await GetCurrentUser();
+                if (!userResult.Success)
+                    return Unauthorized();
+
+                var items = await _context.Clothing
+                    .Where(c => c.IdUser == userResult.User.Id && c.Type == category)
+                    .OrderByDescending(c => c.AddedAt)
+                    .ToListAsync();
+
+                ViewBag.CategoryName = category;
+                return View(items);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Ошибка в Category/{category}");
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost("/ProfileWardrobe/AddClothingItem")]
+        [ValidateAntiForgeryToken]
+        [DisableRequestSizeLimit]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> AddClothingItem([FromForm] ClothingItemRequest request)
+        {
+            try
+            {
+                _logger.LogInformation("Начало обработки AddClothingItem");
+                _logger.LogInformation($"Полученные данные: {JsonSerializer.Serialize(request)}");
+                _logger.LogInformation($"Файл получен: {request.ImageFile?.FileName}, размер: {request.ImageFile?.Length}");
+
+                // Валидация модели
+                if (!ModelState.IsValid)
                 {
+                    _logger.LogWarning("Невалидная модель: " + string.Join(", ", ModelState.Values
+                        .SelectMany(v => v.Errors)
+                        .Select(e => e.ErrorMessage)));
+
                     return BadRequest(new
                     {
                         success = false,
-                        message = "Размер изображения не должен превышать 5 МБ"
+                        message = "Неверные данные",
+                        errors = ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage)
                     });
                 }
 
-                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
-                var fileExtension = Path.GetExtension(imageFile.FileName).ToLower();
-                if (!allowedExtensions.Contains(fileExtension))
+                var fileResult = await SaveUploadedFile(request.ImageFile);
+                if (!fileResult.Success)
                 {
+                    _logger.LogWarning($"Ошибка сохранения файла: {fileResult.Message}");
                     return BadRequest(new
                     {
                         success = false,
-                        message = "Допустимы только файлы JPG, JPEG и PNG"
+                        message = fileResult.Message
                     });
                 }
 
-                // Сохранение изображения
-                var uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads", "clothing");
-                if (!Directory.Exists(uploadsFolder))
+                var userResult = await GetCurrentUser();
+                if (!userResult.Success)
                 {
-                    Directory.CreateDirectory(uploadsFolder);
-                }
-
-                var uniqueFileName = Guid.NewGuid().ToString() + fileExtension;
-                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                var imageUrl = $"/uploads/clothing/{uniqueFileName}";
-
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await imageFile.CopyToAsync(fileStream);
-                }
-
-              
-                var identityUser = await _userManager.GetUserAsync(User);
-                if (identityUser == null)
-                {
+                    _logger.LogWarning($"Пользователь не найден: {userResult.Message}");
                     return Unauthorized(new
                     {
                         success = false,
-                        message = "Пользователь не авторизован"
+                        message = userResult.Message
                     });
                 }
 
-                // Находим пользователя 
-                var dbUser = await _context.Users
-                    .FirstOrDefaultAsync(u => u.Email == identityUser.Email);
-
-                if (dbUser == null)
-                {
-                    return Unauthorized(new
-                    {
-                        success = false,
-                        message = "Пользователь не найден в основной базе"
-                    });
-                }
-
-                // Создаем запись об одежде
+                // Создание новой записи
                 var clothing = new Clothing
                 {
-                    IdUser = dbUser.Id,
-                    Type = itemType,
-                    ImageUrl = imageUrl,
-                    Color = color,
-                    Style = style,
-                    Material = material,
-                    Season = season,
-                    Condition = condition,
+                    IdUser = userResult.User.Id,
+                    Type = request.ItemType,
+                    ImageUrl = fileResult.FileUrl,
+                    Color = request.Color,
+                    Style = request.Style,
+                    Material = request.Material,
+                    Season = request.Season,
+                    Condition = request.Condition,
                     AddedAt = DateTime.UtcNow
                 };
+
+                _logger.LogInformation($"Создана новая вещь: {JsonSerializer.Serialize(clothing)}");
 
                 _context.Clothing.Add(clothing);
                 await _context.SaveChangesAsync();
 
-                return Json(new
+                _logger.LogInformation($"Вещь успешно сохранена с ID: {clothing.Id}");
+
+                return Ok(new
                 {
                     success = true,
-                    category = itemType,
+                    data = new
+                    {
+                        id = clothing.Id,
+                        imageUrl = clothing.ImageUrl,
+                        type = clothing.Type
+                    },
                     message = "Вещь успешно добавлена в гардероб"
                 });
             }
             catch (Exception ex)
             {
-             
-                Console.WriteLine($"Ошибка при добавлении вещи: {ex}");
-
+                _logger.LogError(ex, "Ошибка при добавлении элемента одежды");
                 return StatusCode(500, new
                 {
                     success = false,
-                    message = "Произошла внутренняя ошибка сервера",
-                    detailedError = ex.Message
+                    message = "Внутренняя ошибка сервера",
+                    detail = ex.Message
                 });
             }
         }
@@ -185,5 +152,87 @@ namespace OutfitPlaner_Applcation.Controllers
             return View();
         }
 
+        private async Task<(bool Success, string FileUrl, string Message)> SaveUploadedFile(IFormFile file)
+        {
+            try
+            {
+                if (file == null || file.Length == 0)
+                    return (false, null, "Файл не был загружен");
+
+                if (file.Length > 5 * 1024 * 1024)
+                    return (false, null, "Размер файла не должен превышать 5MB");
+
+                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".webp" };
+                var fileExtension = Path.GetExtension(file.FileName).ToLower();
+                if (!allowedExtensions.Contains(fileExtension))
+                    return (false, null, "Допустимы только файлы изображений (JPG, JPEG, PNG, WEBP)");
+
+                var uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads", "clothing");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                var uniqueFileName = $"{Guid.NewGuid()}{fileExtension}";
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(fileStream);
+                }
+
+                return (true, $"/uploads/clothing/{uniqueFileName}", "Файл успешно сохранен");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка при сохранении файла");
+                return (false, null, $"Ошибка при сохранении файла: {ex.Message}");
+            }
+        }
+
+        private async Task<(bool Success, User User, string Message)> GetCurrentUser()
+        {
+            try
+            {
+                var userEmail = User.FindFirstValue(ClaimTypes.Email);
+                if (string.IsNullOrEmpty(userEmail))
+                    return (false, null, "Email пользователя не найден в токене");
+
+                var user = await _context.Users
+                    .FirstOrDefaultAsync(u => u.Email == userEmail);
+
+                if (user == null)
+                    return (false, null, "Пользователь не найден в базе данных");
+
+                return (true, user, "Пользователь успешно найден");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка при получении текущего пользователя");
+                return (false, null, $"Ошибка при получении пользователя: {ex.Message}");
+            }
+        }
+    }
+
+    public class ClothingItemRequest
+    {
+        [Required(ErrorMessage = "Тип одежды обязателен")]
+        public string ItemType { get; set; }
+
+        [Required(ErrorMessage = "Изображение обязательно")]
+        public IFormFile ImageFile { get; set; }
+
+        [Required(ErrorMessage = "Цвет обязателен")]
+        public string Color { get; set; }
+
+        [Required(ErrorMessage = "Стиль обязателен")]
+        public string Style { get; set; }
+
+        [Required(ErrorMessage = "Материал обязателен")]
+        public string Material { get; set; }
+
+        [Required(ErrorMessage = "Сезон обязателен")]
+        public string Season { get; set; }
+
+        [Range(1, 5, ErrorMessage = "Состояние должно быть от 1 до 5")]
+        public int Condition { get; set; }
     }
 }
