@@ -1188,6 +1188,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\OutfitPlaner_Applcation.9k2p4510wp.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\clothing\1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>OutfitPlaner_Applcation</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/OutfitPlaner_Applcation</BasePath>
+      <RelativePath>uploads/clothing/1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>xwpdt2lv3h</Fingerprint>
+      <Integrity>j6bMmq6oYZTf8KJHrwKxv2PH/8vyG+Qb/tVcP8yrbho=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\clothing\1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\clothing\457ce801-41ea-42aa-aeb2-f11c418f6c0a.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>OutfitPlaner_Applcation</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/OutfitPlaner_Applcation</BasePath>
+      <RelativePath>uploads/clothing/457ce801-41ea-42aa-aeb2-f11c418f6c0a.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fhr2bgpald</Fingerprint>
+      <Integrity>Xc2JP+wcJrfXh4cUgP4P/Fywsrncej5fSSZYrIVPTxc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\clothing\457ce801-41ea-42aa-aeb2-f11c418f6c0a.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\clothing\b4bd0266-93e4-4131-aa60-276811a2c225.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>OutfitPlaner_Applcation</SourceId>

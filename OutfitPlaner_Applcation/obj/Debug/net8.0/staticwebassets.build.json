@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xyYvRJpVfs9nqfdTkPY98MsgftPuGxPd72eJ3Jc7S40=",
+  "Hash": "JD1/POYMUqv54t5OFsgxdXRtqGWYHx3ECrCt1bAIjzY=",
   "Source": "OutfitPlaner_Applcation",
   "BasePath": "_content/OutfitPlaner_Applcation",
   "Mode": "Default",
@@ -2682,6 +2682,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png",
+      "SourceId": "OutfitPlaner_Applcation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\",
+      "BasePath": "_content/OutfitPlaner_Applcation",
+      "RelativePath": "uploads/clothing/1442ed9e-a5a4-4fbb-8b14-0ad778aa9866#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xwpdt2lv3h",
+      "Integrity": "j6bMmq6oYZTf8KJHrwKxv2PH/8vyG+Qb/tVcP8yrbho=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\clothing\\1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png"
+    },
+    {
+      "Identity": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\457ce801-41ea-42aa-aeb2-f11c418f6c0a.png",
+      "SourceId": "OutfitPlaner_Applcation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\",
+      "BasePath": "_content/OutfitPlaner_Applcation",
+      "RelativePath": "uploads/clothing/457ce801-41ea-42aa-aeb2-f11c418f6c0a#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fhr2bgpald",
+      "Integrity": "Xc2JP+wcJrfXh4cUgP4P/Fywsrncej5fSSZYrIVPTxc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\clothing\\457ce801-41ea-42aa-aeb2-f11c418f6c0a.png"
     },
     {
       "Identity": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\b4bd0266-93e4-4131-aa60-276811a2c225.jpg",
@@ -10417,6 +10459,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-x16P8u6y0AKMlbVj+NjjU1IVA4LXj3ZE3YdlTqre9Cg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/clothing/1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png",
+      "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9901"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j6bMmq6oYZTf8KJHrwKxv2PH/8vyG+Qb/tVcP8yrbho=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 19:15:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j6bMmq6oYZTf8KJHrwKxv2PH/8vyG+Qb/tVcP8yrbho="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/clothing/1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.xwpdt2lv3h.png",
+      "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9901"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j6bMmq6oYZTf8KJHrwKxv2PH/8vyG+Qb/tVcP8yrbho=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 19:15:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xwpdt2lv3h"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/clothing/1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j6bMmq6oYZTf8KJHrwKxv2PH/8vyG+Qb/tVcP8yrbho="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/clothing/457ce801-41ea-42aa-aeb2-f11c418f6c0a.fhr2bgpald.png",
+      "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\457ce801-41ea-42aa-aeb2-f11c418f6c0a.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "104054"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xc2JP+wcJrfXh4cUgP4P/Fywsrncej5fSSZYrIVPTxc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 19:15:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fhr2bgpald"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/clothing/457ce801-41ea-42aa-aeb2-f11c418f6c0a.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xc2JP+wcJrfXh4cUgP4P/Fywsrncej5fSSZYrIVPTxc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/clothing/457ce801-41ea-42aa-aeb2-f11c418f6c0a.png",
+      "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\uploads\\clothing\\457ce801-41ea-42aa-aeb2-f11c418f6c0a.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "104054"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xc2JP+wcJrfXh4cUgP4P/Fywsrncej5fSSZYrIVPTxc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 19:15:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xc2JP+wcJrfXh4cUgP4P/Fywsrncej5fSSZYrIVPTxc="
         }
       ]
     },
