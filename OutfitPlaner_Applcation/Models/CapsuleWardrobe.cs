@@ -23,6 +23,7 @@ namespace OutfitPlaner_Applcation.Models
         public string? Season { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public bool? IsFavorite { get; set; }
 
         public int IdUser { get; set; }
 

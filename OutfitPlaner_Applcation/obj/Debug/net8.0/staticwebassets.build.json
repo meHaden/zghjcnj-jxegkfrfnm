@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8X0mP5NTnf31MscF5AfctEi4St3LiQAQe1qhOUmS2g4=",
+  "Hash": "Qv0WvRLnEUiB6J6jRjYfqg0rhQsGDRXOLnuwQ+aTTU0=",
   "Source": "OutfitPlaner_Applcation",
   "BasePath": "_content/OutfitPlaner_Applcation",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "br02s4nw36",
-      "Integrity": "qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8=",
+      "Fingerprint": "ad29tkzuqm",
+      "Integrity": "PjEP7DMxnqJH4YgZ7lJtGxc8f8Jnq53BUBPlYmLIFQk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\capsule.css"
@@ -2770,7 +2770,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/capsule.br02s4nw36.css",
+      "Route": "css/capsule.ad29tkzuqm.css",
       "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\capsule.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2780,7 +2780,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2288"
+          "Value": "3204"
         },
         {
           "Name": "Content-Type",
@@ -2788,11 +2788,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8=\""
+          "Value": "\"PjEP7DMxnqJH4YgZ7lJtGxc8f8Jnq53BUBPlYmLIFQk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Apr 2025 11:00:21 GMT"
+          "Value": "Tue, 08 Apr 2025 12:44:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2802,7 +2802,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "br02s4nw36"
+          "Value": "ad29tkzuqm"
         },
         {
           "Name": "label",
@@ -2810,7 +2810,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8="
+          "Value": "sha256-PjEP7DMxnqJH4YgZ7lJtGxc8f8Jnq53BUBPlYmLIFQk="
         }
       ]
     },
@@ -2825,7 +2825,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2288"
+          "Value": "3204"
         },
         {
           "Name": "Content-Type",
@@ -2833,11 +2833,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8=\""
+          "Value": "\"PjEP7DMxnqJH4YgZ7lJtGxc8f8Jnq53BUBPlYmLIFQk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Apr 2025 11:00:21 GMT"
+          "Value": "Tue, 08 Apr 2025 12:44:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2847,7 +2847,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8="
+          "Value": "sha256-PjEP7DMxnqJH4YgZ7lJtGxc8f8Jnq53BUBPlYmLIFQk="
         }
       ]
     },

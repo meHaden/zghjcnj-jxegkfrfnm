@@ -1,8 +1,9 @@
-﻿@{
+﻿@using System.Linq
+@model List<OutfitPlaner_Applcation.Models.Clothing>
+@{
     ViewData["Title"] = "Капсульный гардероб";
     Layout = null;
 }
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -35,8 +36,37 @@
 
     <div class="content">
         <div class="text-center">
-            <h1 class="display-4">Добро пожаловать!</h1>
-            <p>Здесь вы можете создать свой капсульный гардероб</p>
+            <h1 class="display-4">Создание капсульного гардероба</h1>
+            <button id="showClothesBtn" class="btn-home" style="margin-bottom: 20px;">
+                <i class="fas fa-tshirt"></i> Показать мои вещи
+            </button>
+
+            <div id="clothingContainer" style="display: none;">
+                @if (Model?.Any() == true)
+                {
+                    <div class="clothing-grid">
+                        @foreach (var item in Model)
+                        {
+                            <div class="clothing-item">
+                                <div class="clothing-img-container">
+                                    <img src="@item.ImageUrl" alt="@item.Type" class="clothing-img">
+                                </div>
+                                <div class="clothing-basic-info">
+                                    <p class="clothing-type">@item.Type</p>
+                                    <p class="clothing-color">
+                                        <span class="color-badge" style="background-color: @item.Color"></span>
+                                        @item.Color
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p>Ваш гардероб пуст</p>
+                }
+            </div>
         </div>
     </div>
 
@@ -44,8 +74,16 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menu-toggle');
             const menu = document.querySelector('.menu');
+            const showClothesBtn = document.getElementById('showClothesBtn');
+            const clothingContainer = document.getElementById('clothingContainer');
 
-         
+            // Показать/скрыть одежду
+            showClothesBtn.addEventListener('click', function() {
+                clothingContainer.style.display =
+                    clothingContainer.style.display === 'none' ? 'block' : 'none';
+            });
+
+            // Закрытие меню при клике вне его области
             document.addEventListener('click', function(event) {
                 if (!menu.contains(event.target) &&
                     event.target !== document.querySelector('.menu-icon') &&
