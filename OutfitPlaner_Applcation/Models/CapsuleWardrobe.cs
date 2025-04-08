@@ -1,21 +1,34 @@
-﻿using System;
+﻿// Models/CapsuleWardrobe.cs
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace OutfitPlaner_Applcation.Models;
-
-public partial class CapsuleWardrobe
+namespace OutfitPlaner_Applcation.Models
 {
-    public int Id { get; set; }
+    public partial class CapsuleWardrobe
+    {
+        public int Id { get; set; }
 
-    public int IdUser { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Name { get; set; } = null!;
 
-    public string Name { get; set; } = null!;
+        [StringLength(500)]
+        public string? Description { get; set; }
 
-    public DateTime? CreatedAt { get; set; }
+        [StringLength(50)]
+        public string? Style { get; set; }
 
-    public bool? IsFavorite { get; set; }
+        [StringLength(50)]
+        public string? Season { get; set; }
 
-    public virtual ICollection<ClothingCapsule> ClothingCapsules { get; set; } = new List<ClothingCapsule>();
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    public virtual User IdUserNavigation { get; set; } = null!;
+        public int IdUser { get; set; }
+
+        //public virtual ICollection<Clothing> Items { get; set; } = new List<Clothing>();
+
+        public virtual ICollection<ClothingCapsule> ClothingCapsules { get; set; } = new List<ClothingCapsule>();
+        public virtual User IdUserNavigation { get; set; } = null!;
+    }
 }

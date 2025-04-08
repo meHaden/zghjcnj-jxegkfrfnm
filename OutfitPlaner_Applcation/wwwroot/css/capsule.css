@@ -1,0 +1,132 @@
+﻿
+
+:root {
+    --primary-color: #007bff;
+    --danger-color: #dc3545;
+    --text-color: #333;
+    --bg-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Бургер-меню */
+.burger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+#menu-toggle:checked + .menu-icon {
+    transform: rotate(90deg);
+}
+
+.menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 10px;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+#menu-toggle:checked ~ .menu {
+    right: 20px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.menu li {
+    padding: 0;
+    margin: 0;
+}
+
+    .menu li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-radius: 50%;
+    }
+
+        .menu li a:hover {
+            background-color: #f0f8ff;
+            transform: scale(1.1);
+        }
+
+        .menu li a i {
+            font-size: 20px;
+        }
+
+
+.back-to-home {
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    z-index: 1000;
+}
+
+.btn-home {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+    .btn-home:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-home i {
+        margin-right: 8px;
+    }
+
+
+.content {
+    padding: 100px 20px 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.display-4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}

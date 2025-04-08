@@ -23,31 +23,33 @@ public class ClothingController : Controller
     [Route("")]
     public async Task<IActionResult> Index()
     {
-        _logger.LogInformation("Attempting to access Clothing page");
+        _logger.LogInformation("Попытка загрузки страницы с одеждой");
 
         try
         {
-            // Получаем email 
+            // Получаем email текущего пользователя
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
             if (string.IsNullOrEmpty(userEmail))
             {
-                _logger.LogWarning("Email claim not found");
+                _logger.LogWarning("Email пользователя не найден");
                 return Unauthorized();
             }
 
-            _logger.LogInformation($"Found user email: {userEmail}");
+            _logger.LogInformation($"Найден email пользователя: {userEmail}");
 
+            // Ищем пользователя в БД
             var dbUser = await _context.Users
                 .FirstOrDefaultAsync(u => u.Email == userEmail);
 
             if (dbUser == null)
             {
-                _logger.LogWarning("DB User not found for email: {Email}", userEmail);
+                _logger.LogWarning("Пользователь не найден для email: {Email}", userEmail);
                 return Unauthorized("Пользователь не найден");
             }
 
-            _logger.LogInformation($"Found DB User with ID: {dbUser.Id}");
+            _logger.LogInformation($"Найден пользователь с ID: {dbUser.Id}");
 
+            // Загружаем только одежду пользователя, без капсул
             var clothingItems = await _context.Clothing
                 .Where(c => c.IdUser == dbUser.Id)
                 .OrderByDescending(c => c.AddedAt)
@@ -57,7 +59,7 @@ public class ClothingController : Controller
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error in Clothing/Index");
+            _logger.LogError(ex, "Ошибка в Clothing/Index");
             throw;
         }
     }

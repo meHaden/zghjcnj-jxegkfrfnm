@@ -1,3 +1,4 @@
+wwwroot\css\capsule.css
 wwwroot\css\main.css
 wwwroot\css\mywardrobe.css
 wwwroot\css\register.css

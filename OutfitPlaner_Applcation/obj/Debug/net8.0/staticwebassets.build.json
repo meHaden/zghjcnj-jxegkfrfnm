@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JD1/POYMUqv54t5OFsgxdXRtqGWYHx3ECrCt1bAIjzY=",
+  "Hash": "8X0mP5NTnf31MscF5AfctEi4St3LiQAQe1qhOUmS2g4=",
   "Source": "OutfitPlaner_Applcation",
   "BasePath": "_content/OutfitPlaner_Applcation",
   "Mode": "Default",
@@ -1317,6 +1317,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\OutfitPlaner_Applcation.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\capsule.css",
+      "SourceId": "OutfitPlaner_Applcation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\",
+      "BasePath": "_content/OutfitPlaner_Applcation",
+      "RelativePath": "css/capsule#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "br02s4nw36",
+      "Integrity": "qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\capsule.css"
     },
     {
       "Identity": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\main.css",
@@ -2748,6 +2769,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "css/capsule.br02s4nw36.css",
+      "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\capsule.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2288"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 11:00:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "br02s4nw36"
+        },
+        {
+          "Name": "label",
+          "Value": "css/capsule.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8="
+        }
+      ]
+    },
+    {
+      "Route": "css/capsule.css",
+      "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\capsule.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2288"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 11:00:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8="
+        }
+      ]
+    },
     {
       "Route": "css/main.bb57fkkgdf.css",
       "AssetFile": "C:\\Users\\vlase\\Desktop\\Дипломная работа\\OutfitPlaner_Applcation\\OutfitPlaner_Applcation\\wwwroot\\css\\main.css",
@@ -10321,7 +10424,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 18:45:03 GMT"
+          "Value": "Tue, 08 Apr 2025 09:31:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10366,7 +10469,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 18:45:03 GMT"
+          "Value": "Tue, 08 Apr 2025 09:31:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10411,7 +10514,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 18:45:03 GMT"
+          "Value": "Tue, 08 Apr 2025 09:31:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10448,7 +10551,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 18:45:03 GMT"
+          "Value": "Tue, 08 Apr 2025 09:31:30 GMT"
         },
         {
           "Name": "Cache-Control",

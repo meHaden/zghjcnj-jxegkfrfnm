@@ -1,14 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
+[Route("CapsuleWardrobe")]
 public class CapsuleWardrobeController : Controller
 {
-    public IActionResult CapsuleWardrobe()
+    [HttpGet("GenerateCapsules")]
+    public IActionResult GenerateCapsules()
     {
-        return View();
+        return View("~/Views/Capsule/GenerateCapsules.cshtml");
     }
 
-    public IActionResult ThematicCapsule()
+    // Удалите этот метод, если он есть
+    [HttpGet("CapsuleWardrobe")]
+    public IActionResult CapsuleWardrobe()
     {
-        return View();
+        return RedirectToAction("GenerateCapsules"); // Это может вызывать цикл
     }
 }

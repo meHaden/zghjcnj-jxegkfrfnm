@@ -22,14 +22,14 @@ namespace OutfitPlaner_Applcation.Data
 
             modelBuilder.Entity<Clothing>()
                 .HasOne(c => c.User)
-                .WithMany(u => u.Clothing)  
+                .WithMany(u => u.Clothing)
                 .HasForeignKey(c => c.IdUser)
                 .IsRequired();
-        
 
 
-        // Конфигурация для User
-        modelBuilder.Entity<User>(entity =>
+
+            // Конфигурация для User
+            modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("User");
 
@@ -107,7 +107,7 @@ namespace OutfitPlaner_Applcation.Data
                     .HasColumnName("Added_At")
                     .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
-               
+
                 entity.HasOne(c => c.User)
                     .WithMany(u => u.Clothing)
                     .HasForeignKey(c => c.IdUser)
@@ -117,13 +117,13 @@ namespace OutfitPlaner_Applcation.Data
             // Конфигурация для ClothingCapsule 
             modelBuilder.Entity<ClothingCapsule>(entity =>
             {
-                
+
             });
 
             // Конфигурация для ClothingLook 
             modelBuilder.Entity<ClothingLook>(entity =>
             {
-                
+
             });
         }
 

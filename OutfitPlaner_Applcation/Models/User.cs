@@ -12,4 +12,5 @@ public class User
     public DateTime CreatedAt { get; set; }
 
     public virtual ICollection<Clothing> Clothing { get; set; } = new List<Clothing>();
+    public virtual ICollection<CapsuleWardrobe> CapsuleWardrobes { get; set; } = new List<CapsuleWardrobe>();
 }

@@ -1,5 +1,17 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/OutfitPlaner_Applcation/css/capsule.br02s4nw36.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\capsule.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"br02s4nw36"},{"Name":"integrity","Value":"sha256-qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8="},{"Name":"label","Value":"_content/OutfitPlaner_Applcation/css/capsule.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2288"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 11:00:21 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/OutfitPlaner_Applcation/css/capsule.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\capsule.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2288"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022qfO4zbbfu73Bo5v/6rsUjPTCKpV0hq/2LGLV7XYWTS8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 11:00:21 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/OutfitPlaner_Applcation/css/main.bb57fkkgdf.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\main.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -784,13 +796,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\OutfitPlaner_Applcation.9k2p4510wp.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9k2p4510wp"},{"Name":"integrity","Value":"sha256-x16P8u6y0AKMlbVj\u002BNjjU1IVA4LXj3ZE3YdlTqre9Cg="},{"Name":"label","Value":"_content/OutfitPlaner_Applcation/OutfitPlaner_Applcation.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1141"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022x16P8u6y0AKMlbVj\u002BNjjU1IVA4LXj3ZE3YdlTqre9Cg=\u0022"},{"Name":"Last-Modified","Value":"Mon, 07 Apr 2025 18:45:03 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1141"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022x16P8u6y0AKMlbVj\u002BNjjU1IVA4LXj3ZE3YdlTqre9Cg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 09:31:30 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/OutfitPlaner_Applcation/OutfitPlaner_Applcation.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\OutfitPlaner_Applcation.9k2p4510wp.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-x16P8u6y0AKMlbVj\u002BNjjU1IVA4LXj3ZE3YdlTqre9Cg="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1141"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022x16P8u6y0AKMlbVj\u002BNjjU1IVA4LXj3ZE3YdlTqre9Cg=\u0022"},{"Name":"Last-Modified","Value":"Mon, 07 Apr 2025 18:45:03 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1141"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022x16P8u6y0AKMlbVj\u002BNjjU1IVA4LXj3ZE3YdlTqre9Cg=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 09:31:30 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/OutfitPlaner_Applcation/uploads/clothing/1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\clothing\1442ed9e-a5a4-4fbb-8b14-0ad778aa9866.png'))</AssetFile>
